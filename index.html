@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Download Studio - batch-2026-06-21</title>
+  <meta name="description" content="A curated catalog of printable stationery, stream assets, wall art, kitchen labels, and tabletop RPG digital downloads.">
+  <meta name="keywords" content="digital downloads, printables, creator assets, printable stationery, letter writing kit, poet aesthetic, pen pal gift, vintage letter paper, stream background, vtuber background, sci fi overlay, alien core, twitch panels, kitchen printable, pantry labels, recipe cards, renter friendly decor, kitchen wall art">
+  <style>
+    :root {
+      --ink: #171717;
+      --paper: #faf7ef;
+      --panel: #fffdf8;
+      --line: #d8d1c4;
+      --muted: #6b665e;
+      --green: #2d6a4f;
+      --blue: #244b7a;
+      --red: #9d3b2f;
+      --gold: #b7832f;
+      --shadow: 0 18px 50px rgba(28, 24, 18, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,23,23,0.035) 1px, transparent 1px) 0 0 / 34px 34px,
+        linear-gradient(0deg, rgba(23,23,23,0.03) 1px, transparent 1px) 0 0 / 34px 34px,
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(250, 247, 239, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand strong {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a, .button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .button.primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .intro {
+      padding: 44px 0 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.5fr);
+      gap: 32px;
+      align-items: end;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 7vw, 82px);
+      line-height: 0.96;
+      font-weight: 700;
+      max-width: 880px;
+      letter-spacing: 0;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin: 10px 0 34px;
+    }
+
+    .stat {
+      background: rgba(255, 253, 248, 0.86);
+      padding: 16px;
+      min-height: 92px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .catalog {
+      display: grid;
+      gap: 38px;
+      padding-bottom: 42px;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
+      gap: 26px;
+      padding: 24px;
+      background: rgba(255, 253, 248, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 96px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #eee;
+    }
+
+    .gallery img:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .product-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .description {
+      color: #35312c;
+      line-height: 1.62;
+      white-space: pre-line;
+      max-height: 245px;
+      overflow: auto;
+      padding-right: 6px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .meta-box {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 12px;
+      background: #faf8f2;
+      min-height: 92px;
+    }
+
+    .meta-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 12px;
+      color: var(--muted);
+      background: #fff;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 4px;
+    }
+
+    .purchase-note {
+      border-left: 4px solid var(--gold);
+      background: #fff8e7;
+      padding: 12px 14px;
+      line-height: 1.5;
+      color: #4d412d;
+      border-radius: 0 6px 6px 0;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0 46px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      header { position: static; }
+      .intro, .product { grid-template-columns: 1fr; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      nav { justify-content: flex-start; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 22px, 1180px); }
+      .stats, .meta-grid { grid-template-columns: 1fr; }
+      .product { padding: 14px; }
+      .gallery { grid-template-columns: 1fr; }
+      .description { max-height: none; }
+      .actions .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell topbar">
+      <div class="brand">
+        <strong>Digital Download Studio</strong>
+        <span>batch-2026-06-21 free catalog MVP</span>
+      </div>
+      <nav aria-label="Catalog navigation">
+        <a href="#01-poetcore-letter-kit">Poetcore Letter Writing</a><a href="#02-intergalactic-stream-pack">Intergalactic Stream Background</a><a href="#03-micro-renovation-kitchen-printables">Micro-Renovationchen</a><a href="#04-reading-nook-wall-art">Reading Nook Wall Art</a><a href="#05-trpg-character-token-pack">TRPG Character Token</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro" aria-labelledby="catalog-title">
+      <h1 id="catalog-title">Ready-to-use digital kits for small creative projects.</h1>
+      <p>Browse five test products and inspect the preview images. Purchase buttons are placeholders for Payhip, Gumroad, or itch.io links once the first selling channel is selected.</p>
+    </section>
+
+    <section class="stats" aria-label="Catalog stats">
+      <div class="stat"><strong>5</strong><span>digital product concepts</span></div>
+      <div class="stat"><strong>15</strong><span>marketplace preview images</span></div>
+      <div class="stat"><strong>$5.99+</strong><span>planned entry price point</span></div>
+    </section>
+
+    <section class="catalog" aria-label="Product catalog">
+      <article class="product" id="01-poetcore-letter-kit" data-testid="catalog-product" data-product-id="01-poetcore-letter-kit">
+  <div class="gallery" aria-label="Poetcore Letter Writing Kit images">
+    <img data-testid="catalog-image" src="assets/01-poetcore-letter-kit/01-main.png" alt="Poetcore Letter Writing Kit preview 1"><img data-testid="catalog-image" src="assets/01-poetcore-letter-kit/02-included.png" alt="Poetcore Letter Writing Kit preview 2"><img data-testid="catalog-image" src="assets/01-poetcore-letter-kit/03-license.png" alt="Poetcore Letter Writing Kit preview 3">
+  </div>
+  <div class="product-body">
+    <div class="eyebrow">01-poetcore-letter-kit</div>
+    <h2>Poetcore Letter Writing Kit</h2>
+    <div class="price">$7.99</div>
+    <div class="meta-grid">
+      <div class="meta-box"><span>Built for</span>Gen Z and millennial buyers who want analog, aesthetic letter writing</div>
+      <div class="meta-box"><span>Includes</span>Printable stationery set, envelope liners, wax seal sticker sheet, journaling cards</div>
+    </div>
+    <div class="taglist"><span class="tag">printable stationery</span><span class="tag">letter writing kit</span><span class="tag">poet aesthetic</span><span class="tag">pen pal gift</span><span class="tag">vintage letter paper</span></div>
+    <p class="description">Bring a polished, ready-to-use visual set into your project with this poetcore letter writing kit bundle. This digital download is designed for buyers who want a cohesive aesthetic without waiting for custom work.
+
+Included:
+- Print-ready or web-ready files generated for this niche
+- Coordinated style direction: poetcore, vintage paper, ink wash, soft editorial
+- Usage guide and suggested applications
+- Organized ZIP package for immediate download
+
+Notes:
+- This is a digital product. No physical item will be shipped.
+- Colors may vary slightly depending on monitor and printer settings.
+- Personal and small commercial use can be allowed if you choose that license in the final listing.
+
+AI disclosure: Created with original human direction and AI-assisted image/design tools; edited, curated, and packaged by the seller.</p>
+    <div class="actions">
+      <a class="button primary" id="purchase-01-poetcore-letter-kit" data-testid="purchase-link" href="#purchase-01-poetcore-letter-kit">Buy on Payhip, Gumroad, or itch.io</a>
+    </div>
+    <div class="purchase-note">Replace this purchase link after creating a free-plan product page on Payhip, Gumroad, or itch.io. Keep the buyer ZIP private until it is uploaded to the selling platform.</div>
+  </div>
+</article>
+<article class="product" id="02-intergalactic-stream-pack" data-testid="catalog-product" data-product-id="02-intergalactic-stream-pack">
+  <div class="gallery" aria-label="Intergalactic Stream Background Pack images">
+    <img data-testid="catalog-image" src="assets/02-intergalactic-stream-pack/01-main.png" alt="Intergalactic Stream Background Pack preview 1"><img data-testid="catalog-image" src="assets/02-intergalactic-stream-pack/02-included.png" alt="Intergalactic Stream Background Pack preview 2"><img data-testid="catalog-image" src="assets/02-intergalactic-stream-pack/03-license.png" alt="Intergalactic Stream Background Pack preview 3">
+  </div>
+  <div class="product-body">
+    <div class="eyebrow">02-intergalactic-stream-pack</div>
+    <h2>Intergalactic Stream Background Pack</h2>
+    <div class="price">$9.99</div>
+    <div class="meta-grid">
+      <div class="meta-box"><span>Built for</span>Streamers, VTubers, and creators who need quick sci-fi visual assets</div>
+      <div class="meta-box"><span>Includes</span>16:9 backgrounds, vertical story backgrounds, thumbnail backplates, overlay panels</div>
+    </div>
+    <div class="taglist"><span class="tag">stream background</span><span class="tag">vtuber background</span><span class="tag">sci fi overlay</span><span class="tag">alien core</span><span class="tag">twitch panels</span></div>
+    <p class="description">Bring a polished, ready-to-use visual set into your project with this intergalactic stream background pack bundle. This digital download is designed for buyers who want a cohesive aesthetic without waiting for custom work.
+
+Included:
+- Print-ready or web-ready files generated for this niche
+- Coordinated style direction: alien core, holographic, opalescent, soft sci-fi
+- Usage guide and suggested applications
+- Organized ZIP package for immediate download
+
+Notes:
+- This is a digital product. No physical item will be shipped.
+- Colors may vary slightly depending on monitor and printer settings.
+- Personal and small commercial use can be allowed if you choose that license in the final listing.
+
+AI disclosure: Created with original human direction and AI-assisted image/design tools; edited, curated, and packaged by the seller.</p>
+    <div class="actions">
+      <a class="button primary" id="purchase-02-intergalactic-stream-pack" data-testid="purchase-link" href="#purchase-02-intergalactic-stream-pack">Buy on Payhip, Gumroad, or itch.io</a>
+    </div>
+    <div class="purchase-note">Replace this purchase link after creating a free-plan product page on Payhip, Gumroad, or itch.io. Keep the buyer ZIP private until it is uploaded to the selling platform.</div>
+  </div>
+</article>
+<article class="product" id="03-micro-renovation-kitchen-printables" data-testid="catalog-product" data-product-id="03-micro-renovation-kitchen-printables">
+  <div class="gallery" aria-label="Micro-Renovation Kitchen Printable Set images">
+    <img data-testid="catalog-image" src="assets/03-micro-renovation-kitchen-printables/01-main.png" alt="Micro-Renovation Kitchen Printable Set preview 1"><img data-testid="catalog-image" src="assets/03-micro-renovation-kitchen-printables/02-included.png" alt="Micro-Renovation Kitchen Printable Set preview 2"><img data-testid="catalog-image" src="assets/03-micro-renovation-kitchen-printables/03-license.png" alt="Micro-Renovation Kitchen Printable Set preview 3">
+  </div>
+  <div class="product-body">
+    <div class="eyebrow">03-micro-renovation-kitchen-printables</div>
+    <h2>Micro-Renovation Kitchen Printable Set</h2>
+    <div class="price">$8.99</div>
+    <div class="meta-grid">
+      <div class="meta-box"><span>Built for</span>Renters and home decor buyers doing low-cost kitchen refreshes</div>
+      <div class="meta-box"><span>Includes</span>Kitchen art prints, pantry labels, recipe cards, color palette guide</div>
+    </div>
+    <div class="taglist"><span class="tag">kitchen printable</span><span class="tag">pantry labels</span><span class="tag">recipe cards</span><span class="tag">renter friendly decor</span><span class="tag">kitchen wall art</span></div>
+    <p class="description">Bring a polished, ready-to-use visual set into your project with this micro-renovation kitchen printable set bundle. This digital download is designed for buyers who want a cohesive aesthetic without waiting for custom work.
+
+Included:
+- Print-ready or web-ready files generated for this niche
+- Coordinated style direction: sage green, vintage pink, warm wood, dark cottagecore
+- Usage guide and suggested applications
+- Organized ZIP package for immediate download
+
+Notes:
+- This is a digital product. No physical item will be shipped.
+- Colors may vary slightly depending on monitor and printer settings.
+- Personal and small commercial use can be allowed if you choose that license in the final listing.
+
+AI disclosure: Created with original human direction and AI-assisted image/design tools; edited, curated, and packaged by the seller.</p>
+    <div class="actions">
+      <a class="button primary" id="purchase-03-micro-renovation-kitchen-printables" data-testid="purchase-link" href="#purchase-03-micro-renovation-kitchen-printables">Buy on Payhip, Gumroad, or itch.io</a>
+    </div>
+    <div class="purchase-note">Replace this purchase link after creating a free-plan product page on Payhip, Gumroad, or itch.io. Keep the buyer ZIP private until it is uploaded to the selling platform.</div>
+  </div>
+</article>
+<article class="product" id="04-reading-nook-wall-art" data-testid="catalog-product" data-product-id="04-reading-nook-wall-art">
+  <div class="gallery" aria-label="Reading Nook Printable Wall Art images">
+    <img data-testid="catalog-image" src="assets/04-reading-nook-wall-art/01-main.png" alt="Reading Nook Printable Wall Art preview 1"><img data-testid="catalog-image" src="assets/04-reading-nook-wall-art/02-included.png" alt="Reading Nook Printable Wall Art preview 2"><img data-testid="catalog-image" src="assets/04-reading-nook-wall-art/03-license.png" alt="Reading Nook Printable Wall Art preview 3">
+  </div>
+  <div class="product-body">
+    <div class="eyebrow">04-reading-nook-wall-art</div>
+    <h2>Reading Nook Printable Wall Art</h2>
+    <div class="price">$5.99</div>
+    <div class="meta-grid">
+      <div class="meta-box"><span>Built for</span>BookTok, home decor, and small-space reading nook buyers</div>
+      <div class="meta-box"><span>Includes</span>Printable wall art bundle in 5 ratios with mockup images</div>
+    </div>
+    <div class="taglist"><span class="tag">reading nook print</span><span class="tag">book lover wall art</span><span class="tag">printable wall art</span><span class="tag">library decor</span><span class="tag">bookish decor</span></div>
+    <p class="description">Bring a polished, ready-to-use visual set into your project with this reading nook printable wall art bundle. This digital download is designed for buyers who want a cohesive aesthetic without waiting for custom work.
+
+Included:
+- Print-ready or web-ready files generated for this niche
+- Coordinated style direction: literary girl, warm library, japandi, dark cottagecore
+- Usage guide and suggested applications
+- Organized ZIP package for immediate download
+
+Notes:
+- This is a digital product. No physical item will be shipped.
+- Colors may vary slightly depending on monitor and printer settings.
+- Personal and small commercial use can be allowed if you choose that license in the final listing.
+
+AI disclosure: Created with original human direction and AI-assisted image/design tools; edited, curated, and packaged by the seller.</p>
+    <div class="actions">
+      <a class="button primary" id="purchase-04-reading-nook-wall-art" data-testid="purchase-link" href="#purchase-04-reading-nook-wall-art">Buy on Payhip, Gumroad, or itch.io</a>
+    </div>
+    <div class="purchase-note">Replace this purchase link after creating a free-plan product page on Payhip, Gumroad, or itch.io. Keep the buyer ZIP private until it is uploaded to the selling platform.</div>
+  </div>
+</article>
+<article class="product" id="05-trpg-character-token-pack" data-testid="catalog-product" data-product-id="05-trpg-character-token-pack">
+  <div class="gallery" aria-label="TRPG Character Token Pack images">
+    <img data-testid="catalog-image" src="assets/05-trpg-character-token-pack/01-main.png" alt="TRPG Character Token Pack preview 1"><img data-testid="catalog-image" src="assets/05-trpg-character-token-pack/02-included.png" alt="TRPG Character Token Pack preview 2"><img data-testid="catalog-image" src="assets/05-trpg-character-token-pack/03-license.png" alt="TRPG Character Token Pack preview 3">
+  </div>
+  <div class="product-body">
+    <div class="eyebrow">05-trpg-character-token-pack</div>
+    <h2>TRPG Character Token Pack</h2>
+    <div class="price">$12.99</div>
+    <div class="meta-grid">
+      <div class="meta-box"><span>Built for</span>DnD, Pathfinder, and indie tabletop players needing character assets</div>
+      <div class="meta-box"><span>Includes</span>Transparent PNG tokens, portrait cards, printable standees, VTT-ready webp</div>
+    </div>
+    <div class="taglist"><span class="tag">dnd tokens</span><span class="tag">vtt tokens</span><span class="tag">fantasy character png</span><span class="tag">trpg assets</span><span class="tag">printable standees</span></div>
+    <p class="description">Bring a polished, ready-to-use visual set into your project with this trpg character token pack bundle. This digital download is designed for buyers who want a cohesive aesthetic without waiting for custom work.
+
+Included:
+- Print-ready or web-ready files generated for this niche
+- Coordinated style direction: fantasy portrait, painterly token, clean silhouette, tabletop-ready
+- Usage guide and suggested applications
+- Organized ZIP package for immediate download
+
+Notes:
+- This is a digital product. No physical item will be shipped.
+- Colors may vary slightly depending on monitor and printer settings.
+- Personal and small commercial use can be allowed if you choose that license in the final listing.
+
+AI disclosure: Created with original human direction and AI-assisted image/design tools; edited, curated, and packaged by the seller.</p>
+    <div class="actions">
+      <a class="button primary" id="purchase-05-trpg-character-token-pack" data-testid="purchase-link" href="#purchase-05-trpg-character-token-pack">Buy on Payhip, Gumroad, or itch.io</a>
+    </div>
+    <div class="purchase-note">Replace this purchase link after creating a free-plan product page on Payhip, Gumroad, or itch.io. Keep the buyer ZIP private until it is uploaded to the selling platform.</div>
+  </div>
+</article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <strong>Seller note:</strong> These products are digital downloads. No physical items are shipped. Product pages disclose AI-assisted design and human curation.
+    </div>
+  </footer>
+</body>
+</html>
